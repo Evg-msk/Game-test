@@ -145,7 +145,7 @@ input[type=radio] {
 }
 
 .card-box {
-    box-shadow: 1px 1px 2px midnightblue;
+    box-shadow: 1px 1px 2px darkred;
     cursor: pointer;
     height: 341px;
     width: 218px;
@@ -155,9 +155,9 @@ input[type=radio] {
 }
 
 .card-box-hov:hover {
-    box-shadow: 10px 10px 15px midnightblue;
+    box-shadow: 10px 10px 15px darkred;
     transform: rotate(-3.08deg) translateY(-15px);
-    transition: .4s ease;
+    transition: .4s;
 }
 
 .card-win-game {
@@ -165,7 +165,7 @@ input[type=radio] {
     backface-visibility: hidden;
     transform: rotateY(180deg);
     -webkit-backface-visibility: hidden;
-    height: 40%;
+    height: 100%;
     width: 100%;
     background: url(../images/cardWin.png) no-repeat;
 }
@@ -175,7 +175,7 @@ input[type=radio] {
     backface-visibility: hidden;
     transform: rotateY(180deg);
     -webkit-backface-visibility: hidden;
-    height: 40%;
+    height: 100%;
     width: 100%;
     background: url(../images/cardOver.png) no-repeat;
 }
