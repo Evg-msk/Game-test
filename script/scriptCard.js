@@ -37,18 +37,6 @@ labels.forEach(item => {
         });
     });
 });
-/*const cardBox = document.createElement('div');
-const backsideCard = document.createElement('div');
-            cardBox.className = 'card-box';
-            cardBox.classList.add('card-box-hov');
-            body.append(cardBox);
-            backsideCard.className = 'card-backside';
-            cardBox.append(backsideCard);
-let collection = document.querySelectorAll('.card-box');
-
-startBut.addEventListener('click', () => {
-    for (let i=0; i< levelsMap[] )
-})*/
 
 const cardsCreate = (number, map) => {
     let randomCard = Math.floor(Math.random() * number);
