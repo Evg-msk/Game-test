@@ -1,0 +1,190 @@
+.body {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    min-height: 800px;
+    max-width: 1200px;
+    background-image: url(../images/Background.png);
+    font-family: Roboto, sans-serif;
+    color: #ffff;
+    background-size: cover;
+    overflow: hidden;
+}
+
+
+.main-desk__title {
+    margin: auto;
+    color: #FFFFFF;
+    font-size: 57px;
+}
+.main-desk__description {
+    padding: 15px 0 10% 0;
+    margin: 0;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 19px;
+}
+
+.Card1 {
+    position: absolute;
+    width: 380px;
+    height: 565px;
+    left: 800px;
+    top: 400px;
+    background: url(../images/CardOnMain1.png) no-repeat;
+    transform: rotate(4.0deg);
+}
+.Card2 {
+    position: absolute;
+    width: 385px;
+    height: 565px;
+    left: 930px;
+    top: 380px;
+    background: url(../images/CardOnMain2.png) no-repeat;
+}
+
+.label {
+    display: flex;
+    font-weight: bold;
+    font-size: 50px;
+    color: #FFFFFF;
+    align-items: center;
+}
+
+input[type=radio] {
+    display: none ;
+}
+
+.level__medium,
+.level__hard,
+.level__easy {
+    position: relative;
+}
+
+.label__text {
+    padding-left: 20px;
+    margin: 0 0 50px 0;
+}
+
+.label__text:hover {
+    text-shadow: 0 2px 7px darkred;
+    cursor: pointer;
+    opacity: .8;
+    transition: .4s;
+}
+
+.checked:before {
+    content: '';
+    position: absolute;
+    left: 140px;
+    height: 59px;
+    width: 100%;
+    background: url(../images/Rectangle.png) no-repeat 5px;
+}
+
+.start-but {
+    align-items: center;
+    height: 95px;
+    width: 352px;
+    border-radius: 7px;
+    background-color: #D62B2E;
+    font-size: 32px;
+    color: #ffff;
+    border: none;
+    outline: none;
+}
+
+.start-but:hover {
+    background-color: tomato;
+    box-shadow: 0 0 10px darkslateblue;
+    transition: .5s;
+    cursor: pointer;
+    opacity: .9;
+}
+
+.desk-three-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 702px;
+    align-items: center;
+}
+
+.desk-six-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: auto;
+    height: 730px;
+    width: 702px;
+    align-items: center;
+}
+
+.desk-ten-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: auto;
+    height: 730px;
+    width: 1186px;
+    align-items: center;
+}
+
+.card-click {
+    transform: rotateY(180deg);
+}
+
+.second-desk {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.card-box {
+    box-shadow: 1px 1px 2px midnightblue;
+    cursor: pointer;
+    height: 341px;
+    width: 218px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.card-box-hov:hover {
+    box-shadow: 10px 10px 15px midnightblue;
+    transform: rotate(-3.08deg) translateY(-15px);
+    transition: .4s ease;
+}
+
+.card-win-game {
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    -webkit-backface-visibility: hidden;
+    height: 40%;
+    width: 100%;
+    background: url(../images/cardWin.png) no-repeat;
+}
+
+.card-over-game {
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    -webkit-backface-visibility: hidden;
+    height: 40%;
+    width: 100%;
+    background: url(../images/cardOver.png) no-repeat;
+}
+
+.card-backside {
+    background: url(../images/cardback.png) no-repeat;
+    backface-visibility: hidden;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+}
