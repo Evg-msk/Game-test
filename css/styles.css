@@ -1,64 +1,64 @@
-.body {
-    display: flex;
-    align-items: center;
-    margin: auto;
-    min-height: 800px;
-    max-width: 1200px;
-    background-image: url(../images/Background.png);
-    font-family: Roboto, sans-serif;
-    color: #ffff;
-    background-size: cover;
-    overflow: hidden;
+*{
+    margin: 0;
+    padding: 0;
 }
 
+/*Container content*/
+.container {
+    background: url(../images/Background.png) no-repeat;
+    background-size: cover;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    font-family: Roboto, sans-serif;
+    color: #ffff;
 
-.main-desk__title {
-    margin: auto;
+}
+/*Main desk */
+.main-desk {
+    width: 80%;
+    height: 630px;
+    padding: 50px 160px;
     color: #FFFFFF;
+}
+.main-desk__title {
     font-size: 57px;
+    font-weight: bold;
 }
 .main-desk__description {
     padding: 15px 0 10% 0;
-    margin: 0;
     font-weight: bold;
     color: #FFFFFF;
     font-size: 19px;
 }
-
 .Card1 {
     position: absolute;
-    width: 380px;
-    height: 565px;
-    left: 800px;
-    top: 400px;
+    width: 360px;
+    height: 53%;
+    left: 690px;
+    top: 330px;
     background: url(../images/CardOnMain1.png) no-repeat;
-    transform: rotate(4.0deg);
+    transform: rotate(3.0deg);
 }
 .Card2 {
     position: absolute;
-    width: 385px;
-    height: 565px;
-    left: 930px;
-    top: 380px;
+    width: 400px;
+    height: 54.3%;
+    left: 800px;
+    top: 340px;
     background: url(../images/CardOnMain2.png) no-repeat;
 }
-
+/*Level Menu */
 .label {
+    width: 50%;
     display: flex;
     font-weight: bold;
     font-size: 50px;
     color: #FFFFFF;
-    align-items: center;
 }
 
 input[type=radio] {
     display: none ;
-}
-
-.level__medium,
-.level__hard,
-.level__easy {
-    position: relative;
 }
 
 .label__text {
@@ -102,48 +102,37 @@ input[type=radio] {
     opacity: .9;
 }
 
+/*cards Maps */
 .desk-three-cards {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-    margin: auto;
+    height: 341px;
     width: 702px;
-    align-items: center;
+    margin: 120px 230px 140px;
 }
-
 .desk-six-cards {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
-    margin: auto;
-    height: 730px;
+    height: 706px;
     width: 702px;
-    align-items: center;
+    margin: 2% auto;
 }
 
 .desk-ten-cards {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
-    margin: auto;
-    height: 730px;
+    height: 706px;
     width: 1186px;
-    align-items: center;
+    margin: 2% auto;
 }
 
 .card-click {
     transform: rotateY(180deg);
 }
 
-.second-desk {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    align-content: center;
-}
-
+/*Box of cards */
 .card-box {
     box-shadow: 1px 1px 2px darkred;
     cursor: pointer;
@@ -187,4 +176,276 @@ input[type=radio] {
     width: 100%;
     position: absolute;
     -webkit-backface-visibility: hidden;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        min-height: 1024px;
+        max-height: 1024px;
+        max-width: 1000px;
+    }
+
+    .menu {
+        margin: auto 50px;
+    }
+
+    .title {
+        margin: 0 0 8px 0;
+        font: normal bold 50px/60px "Roboto";
+    }
+
+    .level__simple,
+    .level__average,
+    .level__difficult {
+        margin: 0;
+        font: normal bold 43px/52px "Roboto";
+    }
+
+    .start-button {
+        margin: 0 0 20px 0;
+        height: 90px;
+        width: 340px;
+        font: normal bold 28px/33px "Roboto";
+    }
+
+    .difficulty-levels {
+        margin-bottom: 70px;
+    }
+
+    .pictures {
+        display: none;
+    }
+
+    .difficulty-levels {
+        margin-bottom: 100px;
+    }
+
+    .card-wrapper,
+    .card-backside,
+    .looser-card,
+    .winner-card {
+        background-size: 146px 232px;
+        height: 230px;
+        width: 145px;
+    }
+
+    .three-card-field {
+        height: 230px;
+        width: 483px;
+    }
+
+    .six-card-field {
+        height: 484px;
+        width: 483px;
+    }
+
+    .ten-card-field {
+        height: 484px;
+        width: 760px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        min-height: 800px;
+        max-height: 1024px;
+        max-width: 768px;
+    }
+
+    .menu {
+        margin: 40px 40px;
+    }
+
+    .title {
+        margin-bottom: 8px;
+        font: normal bold 40px/50px "Roboto";
+    }
+
+    .level__simple,
+    .level__average,
+    .level__difficult {
+        margin: 0;
+        font: normal bold 38px/48px "Roboto";
+    }
+
+    .difficulty-levels {
+        margin-bottom: 50px;
+    }
+
+    .start-button {
+        margin: 0 0 30px 0;
+        height: 80px;
+        width: 290px;
+        font: normal bold 25px/30px "Roboto";
+    }
+
+    .pictures {
+        display: none;
+    }
+
+    .card-wrapper,
+    .card-backside,
+    .looser-card,
+    .winner-card {
+        background-size: 86px 142px;
+        height: 140px;
+        width: 85px;
+    }
+
+    .three-card-field {
+        height: 164px;
+        width: 279px;
+    }
+
+    .six-card-field {
+        height: 304px;
+        width: 279px;
+    }
+
+    .ten-card-field {
+        height: 304px;
+        width: 473px;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 480px) {
+    .container {
+        min-height: 740px;
+        max-height: 750px;
+        max-width: 480px;
+    }
+
+    .menu {
+        margin: 20px 20px;
+    }
+
+    .title {
+        font: normal bold 40px/50px "Roboto";
+        margin: 0 0 8px 0;
+    }
+
+    .subtitle {
+        margin-bottom: 20px;
+    }
+
+    .level {
+        margin-bottom: 15px;
+    }
+
+    .level__simple,
+    .level__average,
+    .level__difficult {
+        margin: 0;
+        font: normal bold 30px/40px "Roboto";
+    }
+
+    .difficulty-levels {
+        margin-bottom: 30px;
+    }
+
+    .start-button {
+        margin: 0 0 20px 0;
+        height: 80px;
+        width: 250px;
+        font: normal bold 25px/30px "Roboto";
+    }
+
+    .pictures {
+        display: none;
+    }
+
+    .card-wrapper,
+    .card-backside,
+    .looser-card,
+    .winner-card {
+        background-size: 64px 102px;
+        height: 100px;
+        width: 63px;
+    }
+
+    .three-card-field {
+        height: 100px;
+        width: 210px;
+    }
+
+    .six-card-field {
+        height: 224px;
+        width: 209px;
+    }
+
+    .ten-card-field {
+        height: 540px;
+        width: 138px;
+    }
+}
+
+@media (max-width: 320px) {
+    .container {
+        min-height: 568px;
+        max-height: 750px;
+        max-width: 480px;
+    }
+
+    .menu {
+        margin: 20px 20px;
+    }
+
+    .title {
+        font: normal bold 40px/50px "Roboto";
+        margin: 0 0 8px 0;
+    }
+
+    .subtitle {
+        margin-bottom: 20px;
+    }
+
+    .level {
+        margin-bottom: 15px;
+    }
+
+    .level__simple,
+    .level__average,
+    .level__difficult {
+        margin: 0;
+        font: normal bold 30px/40px "Roboto";
+    }
+
+    .difficulty-levels {
+        margin-bottom: 30px;
+    }
+
+    .start-button {
+        margin: 0 0 20px 0;
+        height: 80px;
+        width: 250px;
+        font: normal bold 25px/30px "Roboto";
+    }
+
+    .pictures {
+        display: none;
+    }
+
+    .card-wrapper,
+    .card-backside,
+    .looser-card,
+    .winner-card {
+        background-size: 64px 102px;
+        height: 100px;
+        width: 63px;
+    }
+
+    .three-card-field {
+        height: 100px;
+        width: 210px;
+    }
+
+    .six-card-field {
+        height: 224px;
+        width: 209px;
+    }
+
+    .ten-card-field {
+        height: 540px;
+        width: 138px;
+    }
 }
