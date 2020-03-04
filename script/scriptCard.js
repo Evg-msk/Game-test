@@ -2,41 +2,28 @@ const body = document.body;
 const getId = id => document.getElementById(id);
 const startBut = getId('start');
 
+let currentLevel = [
+    getId('easy').value,
+    getId('medium').value,
+    getId('hard').value
+];
+
 const levelsMap = {
-    'easy': {
+    easy: {
         'class':'desk-three-cards',
         'numbersOfCard': 3,
     },
 
-    'medium': {
+    medium: {
         'class': 'desk-six-cards',
         'numbersOfCard': 6,
     },
 
-    'hard': {
+    hard: {
         'class': 'desk-ten-cards',
         'numbersOfCard': 10,
-    }
+    },
 };
-
-let currentLevel = getId('easy').value;
-let cardClicked = false;
-
-const labels = document.querySelectorAll('.label');
-const levels = document.getElementsByName('level');
-const levelText = document.querySelectorAll('.label__text');
-
-labels.forEach(item => {
-    item.addEventListener('click', () => {
-        levels.forEach((item, index) => {
-            levelText[index].className = 'label__text';
-
-            if (item.checked) {
-                levelText[index].className = ' label__text checked';
-            }
-        });
-    });
-});
 
 const cardsCreate = (number, map) => {
     let randomCard = Math.floor(Math.random() * number);
@@ -61,14 +48,31 @@ const cardsCreate = (number, map) => {
             cardBox.append(backsideCard);
             overCard.className = 'card-over-game';
             cardBox.append(overCard);
-
         }
     }
 };
 
+let cardClicked = false;
+const labels = document.querySelectorAll('.label');
+const levels = document.getElementsByName('level');
+const levelText = document.querySelectorAll('.label__text');
+let example = 0;
+
+labels.forEach(item => {
+    item.addEventListener('click', () => {
+        levels.forEach((item, index) => {
+            levelText[index].className = 'label__text';
+            if (item.checked) {
+                levelText[index].className = ' label__text checked';
+                example = index;
+            }
+        });
+    });
+});
+
 startBut.addEventListener('click', () => {
     const MainDesk = getId('main');
-    const SetParamNumbers = levelsMap[currentLevel];
+    const SetParamNumbers = levelsMap[currentLevel[example]];
     const cardsField = document.createElement('div');
     cardsField.className = SetParamNumbers['class'];
     body.append(cardsField);
