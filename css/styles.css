@@ -3,12 +3,15 @@
     padding: 0;
 }
 
+input[type=radio] {
+    display: none ;
+}
 /*Container content*/
 .container {
-    background: url(../images/Background.png) no-repeat;
+    background: url(../images/Background.png) center center no-repeat fixed;
     background-size: cover;
     display: flex;
-    width: 100%;
+    min-width: 900px;
     height: 100vh;
     font-family: Roboto, sans-serif;
     color: #ffff;
@@ -16,7 +19,8 @@
 }
 /*Main desk */
 .main-desk {
-    width: 80%;
+    position: fixed;
+    width: 880px;
     height: 630px;
     padding: 50px 160px;
     color: #FFFFFF;
@@ -31,57 +35,68 @@
     color: #FFFFFF;
     font-size: 19px;
 }
-.Card1 {
+/*Box with two cards in main desk */
+.main_card-box {
+    width: 60%;
+    height: 70%;
+    float: right;
+    display: flex;
     position: absolute;
-    width: 360px;
-    height: 53%;
-    left: 690px;
-    top: 330px;
-    background: url(../images/CardOnMain1.png) no-repeat;
-    transform: rotate(3.0deg);
+    top: 35%;
+    right: 3%;
+}
+.Card1 {
+    position: relative;
+    width: 280px;
+    height: 380px;
+    transform: rotate(2.0deg);
+    padding: 90px 0 0 150px;
+    margin: 0 0 0 135px;
 }
 .Card2 {
-    position: absolute;
-    width: 400px;
-    height: 54.3%;
-    left: 800px;
-    top: 340px;
-    background: url(../images/CardOnMain2.png) no-repeat;
+    display: inline;
+    position: relative;
+    width: 385px;
+    height: 400px;
+    padding: 87px 0 0 0;
+    margin: 0 0 0 -190px;
+    z-index: 1;
 }
-/*Level Menu */
+
+/*Level select Menu */
+.main_menu {
+    width: 400px;
+    height: 475px;
+    display: block;
+    text-align: left;
+    float: left;
+}
 .label {
     width: 50%;
-    display: flex;
+    height: 170px;
     font-weight: bold;
     font-size: 50px;
     color: #FFFFFF;
 }
-
-input[type=radio] {
-    display: none ;
-}
-
 .label__text {
-    padding-left: 20px;
-    margin: 0 0 50px 0;
+    padding: 0 0 0 20px;
+    margin: 0;
+    line-height: 1.7em;
 }
-
 .label__text:hover {
     text-shadow: 0 2px 7px darkred;
     cursor: pointer;
     opacity: .8;
     transition: .4s;
 }
-
 .checked:before {
     content: '';
     position: absolute;
     left: 140px;
-    height: 59px;
-    width: 100%;
+    height: 73px;
+    width: 25%;
     background: url(../images/Rectangle.png) no-repeat 5px;
 }
-
 .start-but {
     align-items: center;
     height: 95px;
@@ -92,6 +107,7 @@ input[type=radio] {
     color: #ffff;
     border: none;
     outline: none;
+    margin: 25% 0 0 -10%;
 }
 
 .start-but:hover {
@@ -108,7 +124,7 @@ input[type=radio] {
     justify-content: space-between;
     height: 341px;
     width: 702px;
-    margin: 120px 230px 140px;
+    margin: 2% auto;
 }
 .desk-six-cards {
     display: flex;
@@ -178,274 +194,231 @@ input[type=radio] {
     -webkit-backface-visibility: hidden;
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+/*CSS for mobile*/
+@media (min-width: 320px) and (max-width: 568px) {
+    /*Container content*/
     .container {
-        min-height: 1024px;
-        max-height: 1024px;
-        max-width: 1000px;
+        min-width: 100%;
+        height: 100vh;
+    }
+    /*Main desk */
+    .main-desk {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        overflow-y: auto ;
+    }
+    .main-desk__title {
+        font-size: 37px;
+        padding: 5px 0 0 10px;
+    }
+    .main-desk__description {
+        padding: 10px 0 0 10px;
+    }
+    .main_card-box {
+    display: none;
     }
 
-    .menu {
-        margin: auto 50px;
+    /*Level select Menu */
+    .main_menu {
+        width: 90%;
+        height: 40%;
+        text-align: center;
+        margin: 12px 0 0 15px;
+    }
+    .label {
+        width: 100%;
+        height: 20%;
+        font-size: 42px;
+    }
+    .checked:before {
+        left: 12%;
+        height: 12%;
+    }
+    .start-but {
+        height: 25%;
+        width: 80%;
+        margin: 10% 0 0 5%;
     }
 
-    .title {
-        margin: 0 0 8px 0;
-        font: normal bold 50px/60px "Roboto";
+    /*cards Maps */
+    .desk-three-cards {
+        height: 92%;
+        width: 100%;
+        margin: 50% 5% 50% 5%;
+    }
+    .desk-six-cards {
+        height: 100%;
+        width: 100%;
+    }
+    .desk-ten-cards {
+        height: 100%;
+        width: 100%;
     }
 
-    .level__simple,
-    .level__average,
-    .level__difficult {
-        margin: 0;
-        font: normal bold 43px/52px "Roboto";
+    /*Box of cards */
+    .card-box {
+        height: 20%;
+        width: 23%;
+        margin: 5% 2% 2% 5%;
     }
-
-    .start-button {
-        margin: 0 0 20px 0;
-        height: 90px;
-        width: 340px;
-        font: normal bold 28px/33px "Roboto";
+    .card-win-game, .card-over-game,
+    .card-backside {
+        height: 100%;
+        width: 100%;
+        background-size: contain;
     }
-
-    .difficulty-levels {
-        margin-bottom: 70px;
+}
+/*CSS for tablets devices */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /*Container content*/
+    .container {
+        min-width: 100%;
+        height: 100vh;
     }
-
-    .pictures {
+    /*Main desk */
+    .main-desk {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        overflow-y: auto ;
+    }
+    .main-desk__title {
+        padding: 5px 0 0 10px;
+    }
+    .main-desk__description {
+        font-size: 30px;
+        padding: 10px 0 0 10px;
+    }
+    .main_card-box {
         display: none;
     }
 
-    .difficulty-levels {
-        margin-bottom: 100px;
+    /*Level select Menu */
+    .main_menu {
+        width: 90%;
+        height: 40%;
+        text-align: center;
+        margin: 20% 0 0 5%;
+    }
+    .label {
+        width: 100%;
+        height: 20%;
+    }
+    .checked:before {
+        left: 29%;
+        height: 9%;
+    }
+    .start-but {
+        height: 25%;
+        width: 80%;
+        margin: 10% 0 0 5%;
     }
 
-    .card-wrapper,
-    .card-backside,
-    .looser-card,
-    .winner-card {
-        background-size: 146px 232px;
-        height: 230px;
-        width: 145px;
+    /*cards Maps */
+    .desk-three-cards {
+        height: 100%;
+        width: 100%;
+        margin: 50% 5% 30% 5%;
+    }
+    .desk-six-cards {
+        height: 112%;
+        width: 100%;
+    }
+    .desk-ten-cards {
+        height: 80%;
+        width: 71%;
+        margin-left: 15%;
     }
 
-    .three-card-field {
-        height: 230px;
-        width: 483px;
+    /*Box of cards */
+    .card-box {
+        height: 26%;
+        width: 25%;
+        margin: 5% 2% 2% 5%;
     }
-
-    .six-card-field {
-        height: 484px;
-        width: 483px;
-    }
-
-    .ten-card-field {
-        height: 484px;
-        width: 760px;
+    .card-win-game, .card-over-game,
+    .card-backside {
+        height: 100%;
+        width: 100%;
+        background-size: contain;
     }
 }
 
-@media (min-width: 481px) and (max-width: 768px) {
-    .container {
-        min-height: 800px;
-        max-height: 1024px;
-        max-width: 768px;
-    }
+/*CSS for other desk */
+@media (min-width: 1024px) and (max-width: 1366px) {
 
-    .menu {
-        margin: 40px 40px;
+    /*Main desk */
+    .main-desk {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        overflow-y: auto ;
     }
-
-    .title {
-        margin-bottom: 8px;
-        font: normal bold 40px/50px "Roboto";
+    .main-desk__title {
+        width: 90%;
+        font-size: 65px;
+        padding: 5px 0 0 10px;
+        margin-bottom: 2%;
     }
-
-    .level__simple,
-    .level__average,
-    .level__difficult {
-        margin: 0;
-        font: normal bold 38px/48px "Roboto";
+    .main-desk__description {
+        width: 90%;
+        font-size: 33px;
+        padding: 10px 0 0 10px;
     }
-
-    .difficulty-levels {
-        margin-bottom: 50px;
-    }
-
-    .start-button {
-        margin: 0 0 30px 0;
-        height: 80px;
-        width: 290px;
-        font: normal bold 25px/30px "Roboto";
-    }
-
-    .pictures {
+    .main_card-box {
         display: none;
     }
 
-    .card-wrapper,
-    .card-backside,
-    .looser-card,
-    .winner-card {
-        background-size: 86px 142px;
-        height: 140px;
-        width: 85px;
+    /*Level select Menu */
+    .main_menu {
+        width: 90%;
+        height: 60%;
+        text-align: center;
+        margin: 10% 0 0 5%;
+    }
+    .label {
+        width: 100%;
+        height: 20%;
+        font-size: 65px;
+    }
+    .checked:before {
+        left: 30%;
+        height: 9%;
+    }
+    .start-but {
+        height: 15%;
+        width: 50%;
+        margin: 10% 0 0 5%;
+        font-size: 50px;
     }
 
-    .three-card-field {
-        height: 164px;
-        width: 279px;
+    /*cards Maps */
+    .desk-three-cards {
+        height: 100%;
+        width: 100%;
+        margin: 50% 5% 30% 5%;
+    }
+    .desk-six-cards {
+        height: 112%;
+        width: 100%;
+    }
+    .desk-ten-cards {
+        height: 80%;
+        width: 71%;
+        margin-left: 15%;
     }
 
-    .six-card-field {
-        height: 304px;
-        width: 279px;
+    /*Box of cards */
+    .card-box {
+        height: 26%;
+        width: 25%;
+        margin: 5% 2% 2% 5%;
     }
-
-    .ten-card-field {
-        height: 304px;
-        width: 473px;
-    }
-}
-
-@media (min-width: 321px) and (max-width: 480px) {
-    .container {
-        min-height: 740px;
-        max-height: 750px;
-        max-width: 480px;
-    }
-
-    .menu {
-        margin: 20px 20px;
-    }
-
-    .title {
-        font: normal bold 40px/50px "Roboto";
-        margin: 0 0 8px 0;
-    }
-
-    .subtitle {
-        margin-bottom: 20px;
-    }
-
-    .level {
-        margin-bottom: 15px;
-    }
-
-    .level__simple,
-    .level__average,
-    .level__difficult {
-        margin: 0;
-        font: normal bold 30px/40px "Roboto";
-    }
-
-    .difficulty-levels {
-        margin-bottom: 30px;
-    }
-
-    .start-button {
-        margin: 0 0 20px 0;
-        height: 80px;
-        width: 250px;
-        font: normal bold 25px/30px "Roboto";
-    }
-
-    .pictures {
-        display: none;
-    }
-
-    .card-wrapper,
-    .card-backside,
-    .looser-card,
-    .winner-card {
-        background-size: 64px 102px;
-        height: 100px;
-        width: 63px;
-    }
-
-    .three-card-field {
-        height: 100px;
-        width: 210px;
-    }
-
-    .six-card-field {
-        height: 224px;
-        width: 209px;
-    }
-
-    .ten-card-field {
-        height: 540px;
-        width: 138px;
-    }
-}
-
-@media (max-width: 320px) {
-    .container {
-        min-height: 568px;
-        max-height: 750px;
-        max-width: 480px;
-    }
-
-    .menu {
-        margin: 20px 20px;
-    }
-
-    .title {
-        font: normal bold 40px/50px "Roboto";
-        margin: 0 0 8px 0;
-    }
-
-    .subtitle {
-        margin-bottom: 20px;
-    }
-
-    .level {
-        margin-bottom: 15px;
-    }
-
-    .level__simple,
-    .level__average,
-    .level__difficult {
-        margin: 0;
-        font: normal bold 30px/40px "Roboto";
-    }
-
-    .difficulty-levels {
-        margin-bottom: 30px;
-    }
-
-    .start-button {
-        margin: 0 0 20px 0;
-        height: 80px;
-        width: 250px;
-        font: normal bold 25px/30px "Roboto";
-    }
-
-    .pictures {
-        display: none;
-    }
-
-    .card-wrapper,
-    .card-backside,
-    .looser-card,
-    .winner-card {
-        background-size: 64px 102px;
-        height: 100px;
-        width: 63px;
-    }
-
-    .three-card-field {
-        height: 100px;
-        width: 210px;
-    }
-
-    .six-card-field {
-        height: 224px;
-        width: 209px;
-    }
-
-    .ten-card-field {
-        height: 540px;
-        width: 138px;
+    .card-win-game, .card-over-game,
+    .card-backside {
+        height: 100%;
+        width: 100%;
+        background-size: contain;
     }
 }
